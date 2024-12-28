@@ -12,7 +12,7 @@ const navItems = [
   { name: "Catering", href: "/catering" },
   { name: "Flower", href: "/flowers" },
   { name: "Band", href: "/band" },
-  { name: "Video", href: "/video-and-photo" },
+  { name: "Photography and Videography", href: "/video-and-photo" },
 ];
 
 export default function Navbar() {

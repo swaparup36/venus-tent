@@ -40,11 +40,11 @@ function Sounds() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50">
-      <div className="w-[90%] mx-auto p-4">
-        <div className="bg-white rounded-2xl shadow-xl overflow-hidden p-6 w-full">
-            <div className='flex justify-center items-start h-full'>
+      <div className="w-[95%] md:w-[90%] mx-auto p-4">
+        <div className="bg-white rounded-2xl shadow-xl overflow-hidden p-6 w-full my-4">
+            <div className='flex md:flex-row flex-col justify-center items-start h-full'>
                 {/* Header Image */}
-                <div className='flex flex-col justify-start items-start w-[65%] rounded-xl'>
+                <div className='flex flex-col justify-start items-start w-full md:w-[65%] rounded-xl'>
                     <div className="h-64 w-full relative rounded-xl">
                         <Image
                             src="/images/forms/flower-hero.jpeg"
@@ -69,7 +69,7 @@ function Sounds() {
                 </div>
 
                 {/* Booking Form */}
-                <form onSubmit={handleSubmit} className="p-4 border-2 border-gray-300 ml-4 mr-2 h-full rounded-xl">
+                <form onSubmit={handleSubmit} className="p-4 border-2 border-gray-300 md:ml-4 md:mr-2 h-full rounded-xl">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6 h-full">
                     {/* Name */}
                     <div className="relative">
