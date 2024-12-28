@@ -10,8 +10,10 @@ export function SearchForm() {
   const [selectedEvent, setSelectedEvent] = useState("");
 
   const handleEventSearch = () => {
-    localStorage.setItem("selectedEvent", selectedEvent);
-    router.push("/events");
+    if(typeof window !== 'undefined'){
+      localStorage.setItem("selectedEvent", selectedEvent);
+      router.push("/event-booking");
+    }
   }
 
   return (

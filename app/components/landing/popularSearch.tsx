@@ -18,8 +18,10 @@ function PopularSearches() {
           <span key={index}>
             <span
               onClick={()=>{
-                localStorage.setItem("selectedEvent", search);
-                router.push("/events");
+                if(typeof window !== 'undefined'){
+                  localStorage.setItem("selectedEvent", search);
+                  router.push("/event-booking");
+                }
               }}
               className="hover:underline"
             >

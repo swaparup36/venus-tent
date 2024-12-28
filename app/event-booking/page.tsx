@@ -7,6 +7,7 @@ import { AVAILABLE_SERVICES } from '../lib/constants/availableServices';
 import { AppointmentFormData } from '../lib/interfaces/interface';
 import { eventTypes } from '../lib/constants/eventTypes';
 
+
 function Events() {
     const [formData, setFormData] = useState<AppointmentFormData>({
         name: '',
@@ -14,7 +15,7 @@ function Events() {
         phone: '',
         date: '',
         time: '',
-        eventType: localStorage.getItem('selectedEvent') || '',
+        eventType: typeof window !== 'undefined' ? localStorage.getItem('selectedEvent') || '' : '',
         services: [],
     });
 
