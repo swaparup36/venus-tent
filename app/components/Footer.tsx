@@ -2,6 +2,7 @@ import Link from "next/link";
 import { serviceCards } from "@/app/lib/constants/serviceCards";
 import { Facebook, Instagram, Youtube } from "lucide-react";
 import FooterEventLinks from "./FooterEventLinks";
+import Image from "next/image";
 
 export function FooterSocial() {
   return (
@@ -88,8 +89,17 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Company Description */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-4">Venus</h3>
+          <div className="mb-6">
+            <div className="flex justify-start items-center">
+              <Image
+                src={'/images/logo.png'}
+                alt="logo"
+                className="w-10 h-10 mr-4"
+                width={50}
+                height={50}
+              />
+              <h3 className="text-white text-lg font-semibold">Venus</h3>
+            </div>
             <p className="text-sm">
               Your premier destination for complete event solutions. We provide premium tents, 
               lighting, sound systems, catering, and entertainment services to make your events 

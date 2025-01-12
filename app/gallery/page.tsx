@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useState } from 'react';
 import { Footer } from '../components/Footer';
-import { ChevronRight, Home } from 'lucide-react';
+import { Home } from 'lucide-react';
 import Link from 'next/link';
 
 interface GalleryImages {
@@ -11,8 +11,7 @@ interface GalleryImages {
     Flower: string[];
     Tent: string[];
     Wedding: string[];
-    'Decoration Video': string[];
-    'Wedding Snaps': string[];
+    'Decoration Video & Wedding Snaps': string[];
 }
 
 const categories = [
@@ -20,8 +19,7 @@ const categories = [
   'Flower',
   'Tent',
   'Wedding',
-  'Decoration Video',
-  'Wedding Snaps',
+  'Decoration Video & Wedding Snaps',
 ];
 
 const images: GalleryImages = {
@@ -29,8 +27,7 @@ const images: GalleryImages = {
   Flower: ['/images/gallery/flower-gallery-1.jpg', '/images/gallery/flower-gallery-2.jpg', '/images/gallery/flower-gallery-3.jpg'],
   Tent: ['/images/gallery/tent-gallery-1.jpg', '/images/gallery/tent-gallery-2.jpg',],
   Wedding: ['/images/gallery/wedding-gallery-1.jpg', '/images/gallery/wedding-gallery-2.jpg'],
-  'Decoration Video': ['/videos/gallery/decoration-video-1.mp4', '/videos/gallery/decoration-video-2.mp4', '/videos/gallery/decoration-video-3.mp4', '/videos/gallery/decoration-video-4.mp4'],
-  'Wedding Snaps': ['/videos/gallery/wedding-snaps-gallery-1.mp4', '/videos/gallery/wedding-snaps-gallery-2.mp4'],
+  'Decoration Video & Wedding Snaps': ['/videos/gallery/decoration-video-1.mp4', '/videos/gallery/decoration-video-2.mp4', '/videos/gallery/decoration-video-3.mp4', '/videos/gallery/decoration-video-4.mp4', '/videos/gallery/wedding-snaps-gallery-1.mp4', '/videos/gallery/wedding-snaps-gallery-2.mp4'],
 };
 
 export default function Gallery() {
@@ -70,12 +67,14 @@ export default function Gallery() {
 
         <section className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-10 min-h-[80svh]">
             {images[selectedCategory]?.map((image, index) => {
-                return (selectedCategory === 'Decoration Video' || selectedCategory === 'Wedding Snaps') ? (
-                    <video key={index} controls className="w-full h-auto object-cover" width={400} height={300}>
-                        <source src={image} type="video/mp4" />
-                    </video>
-                ) : (
-                    <div key={index} className="flex justify-center items-center overflow-hidden rounded-lg shadow-lg">
+                if (selectedCategory === 'Decoration Video & Wedding Snaps') {
+                    return <div key={index} className="flex justify-center items-center overflow-hidden rounded-lg shadow-lg">
+                                <video key={index} controls className="w-full h-auto object-cover" width={400} height={300}>
+                                    <source src={image} type="video/mp4" />
+                                </video>
+                            </div>
+                } else {
+                    return <div key={index} className="flex justify-center items-center overflow-hidden rounded-lg shadow-lg">
                         <Image
                             src={image}
                             alt={`${selectedCategory} ${index + 1}`}
@@ -84,7 +83,7 @@ export default function Gallery() {
                             height={300}
                         />
                     </div>
-                )
+                }
         })}
         </section>
         </div>

@@ -1,9 +1,10 @@
 "use client";
 
 import Link from "next/link";
-import { Tent, Menu } from "lucide-react";
+import { Menu } from "lucide-react";
 import { useState } from "react";
 import { cn } from "@/app/lib/utils";
+import Image from "next/image";
 
 const navItems = [
   { name: "Tent", href: "/tent" },
@@ -38,7 +39,14 @@ export default function Navbar() {
           <div className="flex items-center justify-between h-16">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
-              <Tent className="h-8 w-8 text-pink-600" />
+              {/* <Tent className="h-8 w-8 text-pink-600" /> */}
+              <Image
+                src={'/images/logo.png'}
+                alt="logo"
+                className="w-10 h-10"
+                width={50}
+                height={50}
+              />
               <span className="font-bold text-xl">Venus</span>
             </Link>
 
