@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import { eventTypes } from "@/app/lib/constants/eventTypes";
-import { useRouter } from "next/navigation";
+import { useRouter } from 'nextjs-toploader/app';
 
 export function SearchForm() {
   const router = useRouter();

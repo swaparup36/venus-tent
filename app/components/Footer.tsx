@@ -1,22 +1,22 @@
 import Link from "next/link";
 import { serviceCards } from "@/app/lib/constants/serviceCards";
-import { eventTypes } from "@/app/lib/constants/eventTypes";
 import { Facebook, Instagram, Youtube } from "lucide-react";
+import FooterEventLinks from "./FooterEventLinks";
 
 export function FooterSocial() {
   return (
     <div>
       <h4 className="text-white font-semibold mb-4">Follow Us</h4>
       <div className="flex space-x-4">
-        <a
-          href="https://instagram.com/venustent"
+        <Link
+          href="https://www.instagram.com/venus.tent.light"
           target="_blank"
           rel="noopener noreferrer"
           className="hover:text-white transition-colors"
           aria-label="Follow us on Instagram"
         >
           <Instagram className="h-5 w-5" />
-        </a>
+        </Link>
         <a
           href="https://www.instagram.com/venus.tent.light"
           target="_blank"
@@ -58,21 +58,7 @@ export function FooterLinks() {
           ))}
         </ul>
       </div>
-      <div>
-        <h4 className="text-white font-semibold mb-4">Event Types</h4>
-        <ul className="space-y-2">
-          {eventTypes.slice(0, 6).map((event) => (
-            <li key={event.id}>
-              <Link 
-                href={`/events/${event.id}`}
-                className="text-sm hover:text-white transition-colors"
-              >
-                {event.label}
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </div>
+      <FooterEventLinks />
     </div>
   );
 }
@@ -88,7 +74,7 @@ export function FooterContact() {
           <p className="text-sm">
             Central saunda  <br />
             near football ground <br />
-            Ramgarh Jharkhand
+            Ramgarh, Jharkhand
           </p>
         </div>
       </div>
@@ -123,7 +109,7 @@ export function Footer() {
 
         {/* Copyright */}
         <div className="border-t border-gray-800 mt-12 pt-8 text-sm text-center">
-          <p>© {new Date().getFullYear()} Venus. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Swaparup Mukherjee. All rights reserved.</p>
         </div>
       </div>
     </footer>
