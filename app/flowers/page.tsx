@@ -67,12 +67,13 @@ function Sounds() {
                 setTimeout(() => {
                     setIsSubmissionSuccessfull(false);
                 }, 3000);
+            } else {
+                setIsSubmissionFailed(true);
+                setTimeout(() => {
+                    setIsSubmissionFailed(false);
+                }, 3000);
             }
-            setIsSubmitting(false);
-            setIsSubmissionFailed(true);
-            setTimeout(() => {
-                setIsSubmissionFailed(false);
-            }, 3000);
+            setIsSubmitting(false);  
         } catch (error) {
             console.error('Can not book appointment: ', error);
             setIsSubmitting(false);
