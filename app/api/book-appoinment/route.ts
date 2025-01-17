@@ -11,7 +11,7 @@ export async function POST(req: NextRequest) {
         // Send an email to the admin
         const sendmailToAdmin = await sendMail({
             email: "thetechnova023@gmail.com",
-            sendTo: "crampusgaming@gmail.com",
+            sendTo: "dhanjeet03jan@gmail.com",
             subject: "New Appoinment",
             text: "A new appoinment has been made",
             html: `
