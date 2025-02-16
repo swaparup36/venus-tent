@@ -1,8 +1,8 @@
 import { sendMail } from "@/app/lib/mailer";
-import { PrismaClient } from "@prisma/client";
+// import { PrismaClient } from "@prisma/client";
 import { NextRequest, NextResponse } from "next/server";
 
-const prisma = new PrismaClient();
+// const prisma = new PrismaClient();
 
 export async function POST(req: NextRequest) {
     const body = await req.json();
@@ -229,21 +229,21 @@ export async function POST(req: NextRequest) {
         }
 
         // Create a new appointment in the database
-        const newAppoinment = await prisma.appointments.create({
-            data: {
-                full_name: body.name,
-                email: body.email,
-                phone: body.phone,
-                event_date: body.date,
-                event_time: body.time,
-                event_type: body.eventType,
-                services: body.services,
-            }
-        });
+        // const newAppoinment = await prisma.appointments.create({
+        //     data: {
+        //         full_name: body.name,
+        //         email: body.email,
+        //         phone: body.phone,
+        //         event_date: body.date,
+        //         event_time: body.time,
+        //         event_type: body.eventType,
+        //         services: body.services,
+        //     }
+        // });
 
         return NextResponse.json({
             success: true,
-            appoinment: newAppoinment,
+            // appoinment: newAppoinment,
         });
     } catch (error) {
         return NextResponse.json({
