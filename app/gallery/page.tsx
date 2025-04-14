@@ -12,6 +12,7 @@ interface GalleryImages {
     Tent: string[];
     Wedding: string[];
     'Decoration Video & Wedding Snaps': string[];
+    Lighting: string[];
 }
 
 const categories = [
@@ -20,14 +21,16 @@ const categories = [
   'Tent',
   'Wedding',
   'Decoration Video & Wedding Snaps',
+  'Lighting'
 ];
 
 const images: GalleryImages = {
   Catering: ['/images/gallery/catering-gallery-1.jpg', '/images/gallery/catering-gallery-2.jpg'],
-  Flower: ['/images/gallery/flower-gallery-1.jpg', '/images/gallery/flower-gallery-2.jpg', '/images/gallery/flower-gallery-3.jpg'],
+  Flower: ['/images/gallery/flower-gallery-1.jpg', '/images/gallery/flower-gallery-2.jpg', '/images/gallery/flower-gallery-3.jpg', '/images/gallery/flower-gallery-4.jpg'],
   Tent: ['/images/gallery/tent-gallery-1.jpg', '/images/gallery/tent-gallery-2.jpg',],
   Wedding: ['/images/gallery/wedding-gallery-1.jpg', '/images/gallery/wedding-gallery-2.jpg'],
   'Decoration Video & Wedding Snaps': ['/videos/gallery/decoration-video-1.mp4', '/videos/gallery/decoration-video-2.mp4', '/videos/gallery/decoration-video-3.mp4', '/videos/gallery/decoration-video-4.mp4', '/videos/gallery/wedding-snaps-gallery-1.mp4', '/videos/gallery/wedding-snaps-gallery-2.mp4'],
+  Lighting: ['/images/gallery/light-gallery-1.jpg']
 };
 
 export default function Gallery() {
